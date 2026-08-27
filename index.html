@@ -37,47 +37,185 @@
       overflow-x: hidden;
     }
 
-    /* =========================
+    /* =====================================================
        BREAKING NEWS
-    ========================= */
+    ===================================================== */
 
     .breaking-news {
-      height: 45px;
-      background: #111827;
+      height: 54px;
+
+      background: #0b0f19;
       color: white;
+
       display: flex;
       align-items: center;
+
       overflow: hidden;
       white-space: nowrap;
-      position: relative;
+
+      position: sticky;
+      top: 0;
+
       z-index: 3000;
+
+      border-bottom: 3px solid var(--pink);
+
+      box-shadow:
+        0 5px 20px rgba(255, 61, 113, 0.25);
     }
+
+    /* LEFT LIVE ALERT LABEL */
 
     .breaking-label {
       height: 100%;
+
+      min-width: 190px;
+
       display: flex;
       align-items: center;
+      justify-content: center;
+
       padding: 0 25px;
-      background: var(--pink);
-      font-size: 0.8rem;
+
+      background:
+        linear-gradient(
+          135deg,
+          #ff174f,
+          var(--pink),
+          #ff6b00
+        );
+
+      color: white;
+
+      font-size: 0.85rem;
       font-weight: 900;
+
+      letter-spacing: 0.5px;
+
       position: relative;
+
       z-index: 2;
+
       flex-shrink: 0;
+
+      box-shadow:
+        8px 0 25px rgba(255, 61, 113, 0.25);
+
+      animation:
+        breakingPulse 1.5s ease-in-out infinite;
     }
+
+    /* LIVE DOT */
+
+    .breaking-label::before {
+      content: "";
+
+      width: 9px;
+      height: 9px;
+
+      margin-right: 9px;
+
+      background: white;
+
+      border-radius: 50%;
+
+      box-shadow:
+        0 0 0 0 rgba(255, 255, 255, 0.7);
+
+      animation:
+        livePulse 1.2s infinite;
+    }
+
+    /* DIVIDER */
+
+    .breaking-label::after {
+      content: "";
+
+      position: absolute;
+
+      right: -1px;
+      top: 10px;
+
+      width: 2px;
+      height: 34px;
+
+      background: rgba(255, 255, 255, 0.35);
+    }
+
+    /* TICKER WRAPPER */
 
     .ticker-wrapper {
       overflow: hidden;
+
       width: 100%;
+
+      position: relative;
     }
+
+    /* FADE EFFECT */
+
+    .ticker-wrapper::before,
+    .ticker-wrapper::after {
+      content: "";
+
+      position: absolute;
+
+      top: 0;
+
+      width: 60px;
+
+      height: 100%;
+
+      z-index: 2;
+
+      pointer-events: none;
+    }
+
+    .ticker-wrapper::before {
+      left: 0;
+
+      background:
+        linear-gradient(
+          90deg,
+          #0b0f19,
+          transparent
+        );
+    }
+
+    .ticker-wrapper::after {
+      right: 0;
+
+      background:
+        linear-gradient(
+          270deg,
+          #0b0f19,
+          transparent
+        );
+    }
+
+    /* TICKER */
 
     .ticker {
       display: inline-block;
+
       padding-left: 100%;
-      animation: tickerMove 30s linear infinite;
-      font-size: 0.85rem;
+
+      animation:
+        tickerMove 25s linear infinite;
+
+      font-size: 0.9rem;
+
       font-weight: 700;
+
+      letter-spacing: 0.2px;
     }
+
+    .ticker strong {
+      color: var(--yellow);
+      font-weight: 900;
+    }
+
+    /* TICKER ANIMATION */
 
     @keyframes tickerMove {
       from {
@@ -89,19 +227,49 @@
       }
     }
 
-    /* =========================
+    /* LIVE LABEL PULSE */
+
+    @keyframes breakingPulse {
+      0%,
+      100% {
+        filter: brightness(1);
+      }
+
+      50% {
+        filter: brightness(1.15);
+      }
+    }
+
+    /* LIVE DOT PULSE */
+
+    @keyframes livePulse {
+      0% {
+        box-shadow:
+          0 0 0 0
+          rgba(255, 255, 255, 0.7);
+      }
+
+      70% {
+        box-shadow:
+          0 0 0 8px
+          rgba(255, 255, 255, 0);
+      }
+
+      100% {
+        box-shadow:
+          0 0 0 0
+          rgba(255, 255, 255, 0);
+      }
+    }
+
+    /* =====================================================
        TOP CELEBRATE BUTTON
-    ========================= */
+    ===================================================== */
 
     .celebrate-top-btn {
       position: fixed;
 
-      /* FIX:
-         Keep the button below the sticky navbar
-         so it never covers the navbar buttons.
-      */
       top: 130px;
-
       right: 25px;
 
       z-index: 5000;
@@ -110,17 +278,20 @@
       outline: none;
 
       padding: 13px 22px;
+
       border-radius: 50px;
 
-      background: linear-gradient(
-        135deg,
-        #ff3d71,
-        #ff6b00
-      );
+      background:
+        linear-gradient(
+          135deg,
+          #ff3d71,
+          #ff6b00
+        );
 
       color: white;
 
       font-family: "Inter", sans-serif;
+
       font-size: 0.85rem;
       font-weight: 900;
 
@@ -135,35 +306,26 @@
     }
 
     .celebrate-top-btn:hover {
-      transform: translateY(-3px) scale(1.04);
+      transform:
+        translateY(-3px)
+        scale(1.04);
 
       box-shadow:
-        0 18px 40px rgba(255, 61, 113, 0.45);
+        0 18px 40px
+        rgba(255, 61, 113, 0.45);
     }
 
     .celebrate-top-btn:active {
       transform: scale(0.96);
     }
 
-    /* Mobile */
-
-    @media (max-width: 750px) {
-      .celebrate-top-btn {
-        top: 125px;
-        right: 12px;
-
-        padding: 10px 16px;
-
-        font-size: 0.72rem;
-      }
-    }
-
-    /* =========================
+    /* =====================================================
        NAVBAR
-    ========================= */
+    ===================================================== */
 
     nav {
       height: 75px;
+
       width: 100%;
 
       display: flex;
@@ -172,19 +334,26 @@
 
       padding: 0 8%;
 
-      background: rgba(255, 255, 255, 0.94);
+      background:
+        rgba(255, 255, 255, 0.94);
+
       backdrop-filter: blur(15px);
 
-      border-bottom: 1px solid #eeeeee;
+      border-bottom:
+        1px solid #eeeeee;
 
       position: sticky;
-      top: 0;
+
+      top: 54px;
+
       z-index: 1000;
     }
 
     .logo {
       font-size: 1.6rem;
+
       font-weight: 900;
+
       letter-spacing: -1px;
     }
 
@@ -194,39 +363,52 @@
 
     .nav-links {
       display: flex;
+
       align-items: center;
+
       gap: 25px;
+
       list-style: none;
     }
 
     .nav-links a {
       text-decoration: none;
+
       color: var(--dark);
+
       font-size: 0.9rem;
+
       font-weight: 700;
     }
 
     .nav-button {
       background: var(--dark);
+
       color: white !important;
+
       padding: 11px 20px;
+
       border-radius: 50px;
     }
 
-    /* =========================
+    /* =====================================================
        HERO
-    ========================= */
+    ===================================================== */
 
     .hero {
-      min-height: calc(100vh - 120px);
+      min-height:
+        calc(100vh - 129px);
 
       padding: 70px 8%;
 
       display: flex;
+
       align-items: center;
+
       gap: 60px;
 
       position: relative;
+
       overflow: hidden;
 
       background:
@@ -245,8 +427,11 @@
 
     .hero-content {
       flex: 1;
+
       max-width: 650px;
+
       position: relative;
+
       z-index: 5;
     }
 
@@ -256,11 +441,13 @@
       padding: 10px 18px;
 
       background: #fff0e5;
+
       color: var(--orange);
 
       border-radius: 50px;
 
       font-size: 0.8rem;
+
       font-weight: 900;
 
       letter-spacing: 0.5px;
@@ -269,10 +456,15 @@
     }
 
     .hero h1 {
-      font-size: clamp(3.5rem, 6vw, 6.5rem);
+      font-size:
+        clamp(3.5rem, 6vw, 6.5rem);
+
       line-height: 0.95;
+
       letter-spacing: -5px;
+
       font-weight: 900;
+
       margin-bottom: 25px;
     }
 
@@ -282,15 +474,21 @@
 
     .hero p {
       color: #5f6875;
+
       font-size: 1.1rem;
+
       line-height: 1.8;
+
       max-width: 600px;
     }
 
     .hero-buttons {
       display: flex;
+
       gap: 15px;
+
       flex-wrap: wrap;
+
       margin-top: 30px;
     }
 
@@ -302,6 +500,7 @@
       border-radius: 50px;
 
       font-family: inherit;
+
       font-weight: 800;
 
       cursor: pointer;
@@ -314,40 +513,50 @@
     }
 
     .btn:hover {
-      transform: translateY(-4px) scale(1.02);
+      transform:
+        translateY(-4px)
+        scale(1.02);
     }
 
     .btn-primary {
       background: var(--orange);
+
       color: white;
 
       box-shadow:
-        0 15px 30px rgba(255, 107, 0, 0.25);
+        0 15px 30px
+        rgba(255, 107, 0, 0.25);
     }
 
     .btn-dark {
       background: var(--dark);
+
       color: white;
     }
 
-    /* =========================
+    /* =====================================================
        CHASE SCENE
-    ========================= */
+    ===================================================== */
 
     .hero-visual {
       flex: 1;
+
       min-width: 500px;
 
       display: flex;
+
       justify-content: center;
     }
 
     .chase-scene {
       width: 560px;
+
       max-width: 100%;
+
       height: 470px;
 
       position: relative;
+
       overflow: hidden;
 
       border-radius: 35px;
@@ -363,13 +572,15 @@
       border: 4px solid white;
 
       box-shadow:
-        0 30px 70px rgba(0, 0, 0, 0.12);
+        0 30px 70px
+        rgba(0, 0, 0, 0.12);
     }
 
     .sun {
       position: absolute;
 
       width: 80px;
+
       height: 80px;
 
       background: var(--yellow);
@@ -377,10 +588,12 @@
       border-radius: 50%;
 
       top: 45px;
+
       right: 55px;
 
       box-shadow:
-        0 0 60px rgba(255, 184, 0, 0.5);
+        0 0 60px
+        rgba(255, 184, 0, 0.5);
     }
 
     .cloud {
@@ -420,11 +633,14 @@
       position: absolute;
 
       top: 25px;
+
       left: 50%;
 
-      transform: translateX(-50%);
+      transform:
+        translateX(-50%);
 
       background: var(--dark);
+
       color: white;
 
       padding: 12px 20px;
@@ -432,13 +648,15 @@
       border-radius: 50px;
 
       font-size: 0.75rem;
+
       font-weight: 900;
 
       z-index: 20;
 
       white-space: nowrap;
 
-      animation: alertShake 1s infinite;
+      animation:
+        alertShake 1s infinite;
     }
 
     @keyframes alertShake {
@@ -462,15 +680,19 @@
       }
     }
 
-    /* ROAD */
+    /* =====================================================
+       ROAD
+    ===================================================== */
 
     .road {
       position: absolute;
 
       bottom: 105px;
+
       left: 0;
 
       width: 100%;
+
       height: 12px;
 
       background:
@@ -494,14 +716,15 @@
       }
     }
 
-    /* =========================
+    /* =====================================================
        BOY
-    ========================= */
+    ===================================================== */
 
     .runner-boy {
       position: absolute;
 
       bottom: 125px;
+
       left: -150px;
 
       z-index: 10;
@@ -513,9 +736,11 @@
 
     .boy-emoji {
       font-size: 95px;
+
       display: block;
 
-      transform: scaleX(-1);
+      transform:
+        scaleX(-1);
     }
 
     .runner-name {
@@ -528,12 +753,14 @@
       border-radius: 50px;
 
       font-size: 0.75rem;
+
       font-weight: 900;
 
       text-align: center;
 
       box-shadow:
-        0 8px 20px rgba(0, 0, 0, 0.1);
+        0 8px 20px
+        rgba(0, 0, 0, 0.1);
     }
 
     @keyframes boyRunning {
@@ -572,14 +799,15 @@
       }
     }
 
-    /* =========================
+    /* =====================================================
        CRUSH
-    ========================= */
+    ===================================================== */
 
     .runner-crush {
       position: absolute;
 
       bottom: 125px;
+
       left: -240px;
 
       z-index: 9;
@@ -591,9 +819,11 @@
 
     .crush-emoji {
       font-size: 95px;
+
       display: block;
 
-      transform: scaleX(-1);
+      transform:
+        scaleX(-1);
     }
 
     .rakhi {
@@ -602,6 +832,7 @@
       font-size: 50px;
 
       top: 5px;
+
       right: -20px;
 
       animation:
@@ -612,6 +843,7 @@
       margin-top: 5px;
 
       background: var(--pink);
+
       color: white;
 
       padding: 7px 15px;
@@ -619,12 +851,14 @@
       border-radius: 50px;
 
       font-size: 0.75rem;
+
       font-weight: 900;
 
       text-align: center;
 
       box-shadow:
-        0 8px 20px rgba(255, 61, 113, 0.25);
+        0 8px 20px
+        rgba(255, 61, 113, 0.25);
     }
 
     @keyframes crushRunning {
@@ -651,7 +885,8 @@
 
     @keyframes rakhiWave {
       from {
-        transform: rotate(-15deg);
+        transform:
+          rotate(-15deg);
       }
 
       to {
@@ -661,9 +896,9 @@
       }
     }
 
-    /* =========================
+    /* =====================================================
        SPEED LINES
-    ========================= */
+    ===================================================== */
 
     .speed-line {
       position: absolute;
@@ -681,13 +916,17 @@
 
     .speed-1 {
       width: 80px;
+
       top: 260px;
+
       left: 20px;
     }
 
     .speed-2 {
       width: 50px;
+
       top: 300px;
+
       left: 100px;
 
       animation-delay: -0.2s;
@@ -695,7 +934,9 @@
 
     .speed-3 {
       width: 100px;
+
       top: 350px;
+
       left: 10px;
 
       animation-delay: -0.4s;
@@ -703,7 +944,9 @@
 
     @keyframes speedMove {
       from {
-        transform: translateX(0);
+        transform:
+          translateX(0);
+
         opacity: 0;
       }
 
@@ -712,14 +955,16 @@
       }
 
       to {
-        transform: translateX(300px);
+        transform:
+          translateX(300px);
+
         opacity: 0;
       }
     }
 
-    /* =========================
+    /* =====================================================
        SPEECH
-    ========================= */
+    ===================================================== */
 
     .speech {
       position: absolute;
@@ -731,16 +976,19 @@
       border-radius: 18px;
 
       font-size: 0.75rem;
+
       font-weight: 900;
 
       box-shadow:
-        0 15px 30px rgba(0, 0, 0, 0.1);
+        0 15px 30px
+        rgba(0, 0, 0, 0.1);
 
       z-index: 15;
     }
 
     .crush-speech {
       top: 180px;
+
       left: 35px;
 
       color: var(--pink);
@@ -751,6 +999,7 @@
 
     .boy-speech {
       top: 240px;
+
       right: 35px;
 
       color: var(--orange);
@@ -761,18 +1010,20 @@
 
     @keyframes speechFloat {
       50% {
-        transform: translateY(-10px);
+        transform:
+          translateY(-10px);
       }
     }
 
-    /* =========================
+    /* =====================================================
        GAME OVER
-    ========================= */
+    ===================================================== */
 
     .game-over {
       position: absolute;
 
       top: 48%;
+
       left: 50%;
 
       transform:
@@ -780,6 +1031,7 @@
         scale(0);
 
       background: var(--dark);
+
       color: white;
 
       padding: 20px 30px;
@@ -791,6 +1043,7 @@
       z-index: 50;
 
       font-weight: 900;
+
       font-size: 1.2rem;
 
       animation:
@@ -836,15 +1089,17 @@
       }
     }
 
-    /* =========================
+    /* =====================================================
        DANGER METER
-    ========================= */
+    ===================================================== */
 
     .danger-meter {
       position: absolute;
 
       bottom: 20px;
+
       left: 25px;
+
       right: 25px;
 
       background: white;
@@ -856,7 +1111,8 @@
       z-index: 30;
 
       box-shadow:
-        0 10px 25px rgba(0, 0, 0, 0.08);
+        0 10px 25px
+        rgba(0, 0, 0, 0.08);
     }
 
     .meter-text {
@@ -865,6 +1121,7 @@
       justify-content: space-between;
 
       font-size: 0.75rem;
+
       font-weight: 900;
 
       margin-bottom: 9px;
@@ -888,6 +1145,7 @@
       display: block;
 
       height: 100%;
+
       width: 95%;
 
       border-radius: 20px;
@@ -914,9 +1172,9 @@
       }
     }
 
-    /* =========================
+    /* =====================================================
        GENERAL
-    ========================= */
+    ===================================================== */
 
     section {
       position: relative;
@@ -958,9 +1216,9 @@
       line-height: 1.7;
     }
 
-    /* =========================
+    /* =====================================================
        STATS
-    ========================= */
+    ===================================================== */
 
     .stats {
       padding: 100px 8%;
@@ -990,7 +1248,8 @@
     }
 
     .stat-card:hover {
-      transform: translateY(-10px);
+      transform:
+        translateY(-10px);
 
       background: var(--dark);
 
@@ -1013,9 +1272,9 @@
       line-height: 1.6;
     }
 
-    /* =========================
+    /* =====================================================
        DEPARTMENTS
-    ========================= */
+    ===================================================== */
 
     .departments {
       padding: 110px 8%;
@@ -1049,10 +1308,12 @@
     }
 
     .department-card:hover {
-      transform: translateY(-10px);
+      transform:
+        translateY(-10px);
 
       box-shadow:
-        0 25px 60px rgba(0, 0, 0, 0.08);
+        0 25px 60px
+        rgba(0, 0, 0, 0.08);
     }
 
     .department-icon {
@@ -1089,9 +1350,9 @@
       font-size: 0.85rem;
     }
 
-    /* =========================
+    /* =====================================================
        CALCULATOR
-    ========================= */
+    ===================================================== */
 
     .crush-section {
       padding: 110px 8%;
@@ -1119,7 +1380,8 @@
       border-radius: 40px;
 
       box-shadow:
-        0 30px 80px rgba(0, 0, 0, 0.1);
+        0 30px 80px
+        rgba(0, 0, 0, 0.1);
     }
 
     .crush-container h2 {
@@ -1192,9 +1454,9 @@
       line-height: 1.8;
     }
 
-    /* =========================
+    /* =====================================================
        SEO
-    ========================= */
+    ===================================================== */
 
     .seo-section {
       padding: 110px 8%;
@@ -1293,12 +1555,13 @@
 
       background: var(--orange);
 
-      transition: width 2s ease;
+      transition:
+        width 2s ease;
     }
 
-    /* =========================
+    /* =====================================================
        SURVIVOR
-    ========================= */
+    ===================================================== */
 
     .survivor {
       padding: 110px 8%;
@@ -1341,9 +1604,9 @@
       line-height: 1.8;
     }
 
-    /* =========================
+    /* =====================================================
        CELEBRATION OVERLAY
-    ========================= */
+    ===================================================== */
 
     .celebration-overlay {
       position: fixed;
@@ -1400,12 +1663,14 @@
 
       text-align: center;
 
-      background: rgba(255, 255, 255, 0.97);
+      background:
+        rgba(255, 255, 255, 0.97);
 
       border-radius: 40px;
 
       box-shadow:
-        0 40px 100px rgba(0, 0, 0, 0.3);
+        0 40px 100px
+        rgba(0, 0, 0, 0.3);
 
       animation:
         celebrationPop 0.6s
@@ -1442,11 +1707,13 @@
 
     @keyframes celebrationBounce {
       from {
-        transform: translateY(0);
+        transform:
+          translateY(0);
       }
 
       to {
-        transform: translateY(-12px);
+        transform:
+          translateY(-12px);
       }
     }
 
@@ -1519,9 +1786,9 @@
       color: white;
     }
 
-    /* =========================
+    /* =====================================================
        FALLING CELEBRATION ITEMS
-    ========================= */
+    ===================================================== */
 
     .rain-item {
       position: fixed;
@@ -1561,9 +1828,9 @@
       }
     }
 
-    /* =========================
+    /* =====================================================
        FOOTER
-    ========================= */
+    ===================================================== */
 
     footer {
       padding: 55px 8%;
@@ -1591,11 +1858,12 @@
       line-height: 1.7;
     }
 
-    /* =========================
+    /* =====================================================
        RESPONSIVE
-    ========================= */
+    ===================================================== */
 
     @media (max-width: 1000px) {
+
       .hero {
         flex-direction: column;
 
@@ -1620,11 +1888,62 @@
     }
 
     @media (max-width: 750px) {
+
+      /* BREAKING NEWS */
+
+      .breaking-news {
+        height: 48px;
+
+        position: sticky;
+
+        top: 0;
+      }
+
+      .breaking-label {
+        min-width: 145px;
+
+        padding: 0 14px;
+
+        font-size: 0.68rem;
+      }
+
+      .breaking-label::before {
+        width: 7px;
+
+        height: 7px;
+
+        margin-right: 6px;
+      }
+
+      .breaking-label::after {
+        top: 8px;
+
+        height: 32px;
+      }
+
+      .ticker {
+        font-size: 0.72rem;
+      }
+
+      /* NAV */
+
+      nav {
+        height: 65px;
+
+        padding: 0 6%;
+
+        top: 48px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      /* CELEBRATE BUTTON */
+
       .celebrate-top-btn {
-        /* FIX:
-           Still below the navbar on mobile.
-        */
         top: 125px;
+
         right: 10px;
 
         padding: 10px 15px;
@@ -1632,13 +1951,7 @@
         font-size: 0.7rem;
       }
 
-      .nav-links {
-        display: none;
-      }
-
-      nav {
-        padding: 0 6%;
-      }
+      /* HERO */
 
       .hero {
         padding: 60px 6%;
@@ -1648,17 +1961,21 @@
         letter-spacing: -3px;
       }
 
+      /* SECTIONS */
+
       .stats,
       .departments,
       .crush-section,
       .seo-section,
       .survivor {
         padding-left: 6%;
+
         padding-right: 6%;
       }
 
       .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:
+          repeat(2, 1fr);
       }
 
       .department-grid,
@@ -1679,12 +1996,6 @@
         font-size: 75px;
       }
 
-      .breaking-label {
-        padding: 0 12px;
-
-        font-size: 0.65rem;
-      }
-
       .celebration-card {
         padding: 40px 20px;
       }
@@ -1695,6 +2006,7 @@
     }
 
     @media (max-width: 500px) {
+
       .stats-grid {
         grid-template-columns: 1fr;
       }
@@ -1714,40 +2026,85 @@
       .celebrate-top-btn {
         display: none;
       }
+
+      /* Smaller breaking label */
+
+      .breaking-label {
+        min-width: 125px;
+
+        padding: 0 10px;
+
+        font-size: 0.6rem;
+      }
+
+      .breaking-label::before {
+        margin-right: 5px;
+      }
+
+      .ticker {
+        font-size: 0.65rem;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- =========================
+  <!-- =====================================================
        BREAKING NEWS
-  ========================= -->
+  ===================================================== -->
 
   <div class="breaking-news">
 
     <div class="breaking-label">
-      🚨 BREAKING NEWS
+      LIVE ALERT
     </div>
 
     <div class="ticker-wrapper">
+
       <div class="ticker">
-        🚨 DashMedia Alert:
-        Boys are advised to maintain a minimum 5-meter distance from their office crush today.
+
+        🚨 <strong>LIVE ALERT:</strong>
+        Rakhi Emergency Active at DashMedia! 🎀
+
+        &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+
+        Boys are advised to maintain a minimum
+        5-meter distance from their office crush today.
+
+        &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+
         🎀 Reason: She might be carrying a Rakhi.
+
+        &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+
         💀 Developers are pretending the server is down.
-        📈 SEO team says rankings are more important than relationships.
-        🏃 Several employees have already requested Work From Home.
-        🚨 HR has officially declared "Rakhi Emergency Mode".
+
+        &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+
+        📈 SEO team says rankings are more important
+        than relationships.
+
+        &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+
+        🏃 Several employees have already requested
+        Work From Home.
+
+        &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+
+        🚨 HR has officially declared
+        "Rakhi Emergency Mode".
+
       </div>
+
     </div>
 
   </div>
 
 
-  <!-- =========================
-       TOP CELEBRATION BUTTON
-  ========================= -->
+  <!-- =====================================================
+       TOP CELEBRATE BUTTON
+  ===================================================== -->
 
   <button
     type="button"
@@ -1758,9 +2115,9 @@
   </button>
 
 
-  <!-- =========================
+  <!-- =====================================================
        NAVBAR
-  ========================= -->
+  ===================================================== -->
 
   <nav>
 
@@ -1802,9 +2159,9 @@
   </nav>
 
 
-  <!-- =========================
+  <!-- =====================================================
        HERO
-  ========================= -->
+  ===================================================== -->
 
   <section class="hero">
 
@@ -1816,12 +2173,14 @@
 
       <h1>
         Run For Your Life...
+
         <span class="highlight">
           She's Holding A Rakhi. 💀
         </span>
       </h1>
 
       <p>
+
         At DashMedia, we survive Google updates,
         broken websites, demanding clients,
         impossible deadlines and Monday meetings.
@@ -1831,8 +2190,10 @@
         But today there is a bigger emergency...
 
         <strong>
-          Your office crush is running after you with a Rakhi. 🎀🏃
+          Your office crush is running after you
+          with a Rakhi. 🎀🏃
         </strong>
+
       </p>
 
       <div class="hero-buttons">
@@ -1856,9 +2217,7 @@
     </div>
 
 
-    <!-- =========================
-         RUNNING SCENE
-    ========================= -->
+    <!-- RUNNING SCENE -->
 
     <div class="hero-visual">
 
@@ -1877,7 +2236,6 @@
         <div class="danger-alert">
           🚨 RAKHI DETECTED!
         </div>
-
 
         <div class="speed-line speed-1"></div>
         <div class="speed-line speed-2"></div>
@@ -1968,9 +2326,9 @@
   </section>
 
 
-  <!-- =========================
+  <!-- =====================================================
        STATS
-  ========================= -->
+  ===================================================== -->
 
   <section class="stats">
 
@@ -2063,9 +2421,9 @@
   </section>
 
 
-  <!-- =========================
+  <!-- =====================================================
        DEPARTMENTS
-  ========================= -->
+  ===================================================== -->
 
   <section
     class="departments"
@@ -2207,9 +2565,9 @@
   </section>
 
 
-  <!-- =========================
+  <!-- =====================================================
        CRUSH CALCULATOR
-  ========================= -->
+  ===================================================== -->
 
   <section
     class="crush-section"
@@ -2269,9 +2627,9 @@
   </section>
 
 
-  <!-- =========================
-       SEO SECTION
-  ========================= -->
+  <!-- =====================================================
+       SEO
+  ===================================================== -->
 
   <section
     class="seo-section"
@@ -2292,6 +2650,7 @@
         </h2>
 
         <p>
+
           Every SEO executive has one dream:
 
           <br>
@@ -2310,6 +2669,7 @@
 
           Happy Raksha Bandhan to everyone
           checking Search Console every morning. 📈😂
+
         </p>
 
       </div>
@@ -2420,9 +2780,9 @@
   </section>
 
 
-  <!-- =========================
+  <!-- =====================================================
        SURVIVOR
-  ========================= -->
+  ===================================================== -->
 
   <section
     class="survivor"
@@ -2495,9 +2855,9 @@
   </section>
 
 
-  <!-- =========================
+  <!-- =====================================================
        FOOTER
-  ========================= -->
+  ===================================================== -->
 
   <footer>
 
@@ -2520,7 +2880,7 @@
 
 
   <!-- =====================================================
-       RAKSHA BANDHAN CELEBRATION OVERLAY
+       CELEBRATION OVERLAY
   ===================================================== -->
 
   <div
@@ -2543,6 +2903,7 @@
       </h3>
 
       <p>
+
         Today, we're taking a break from
         Google rankings, SEO reports,
         development bugs, client revisions
@@ -2553,6 +2914,7 @@
         Wishing everyone a wonderful
         Raksha Bandhan filled with happiness,
         laughter, sweets and lots of love!
+
       </p>
 
 
@@ -2601,9 +2963,9 @@
   </div>
 
 
-  <!-- =========================
+  <!-- =====================================================
        JAVASCRIPT
-  ========================= -->
+  ===================================================== -->
 
   <script>
 
@@ -2612,21 +2974,25 @@
     ===================================================== */
 
     const celebrationOverlay =
-      document.getElementById("celebrationOverlay");
+      document.getElementById(
+        "celebrationOverlay"
+      );
 
     const celebrateBtn =
-      document.getElementById("celebrateBtn");
+      document.getElementById(
+        "celebrateBtn"
+      );
 
     const closeCelebrationBtn =
-      document.getElementById("closeCelebrationBtn");
+      document.getElementById(
+        "closeCelebrationBtn"
+      );
 
     const continueBtn =
-      document.getElementById("continueBtn");
+      document.getElementById(
+        "continueBtn"
+      );
 
-
-    /*
-      OPEN CELEBRATION
-    */
 
     celebrateBtn.addEventListener(
       "click",
@@ -2634,21 +3000,11 @@
     );
 
 
-    /*
-      CLOSE BUTTON
-    */
-
     closeCelebrationBtn.addEventListener(
       "click",
       closeCelebration
     );
 
-
-    /*
-      CONTINUE SURVIVING BUTTON
-
-      Closes the celebration overlay.
-    */
 
     continueBtn.addEventListener(
       "click",
@@ -2656,27 +3012,22 @@
     );
 
 
-    /*
-      CLICK OUTSIDE CARD TO CLOSE
-    */
-
     celebrationOverlay.addEventListener(
       "click",
       function (event) {
 
         if (
-          event.target === celebrationOverlay
+          event.target ===
+          celebrationOverlay
         ) {
+
           closeCelebration();
+
         }
 
       }
     );
 
-
-    /*
-      ESC KEY ALSO CLOSES
-    */
 
     document.addEventListener(
       "keydown",
@@ -2684,7 +3035,9 @@
 
         if (
           event.key === "Escape" &&
-          celebrationOverlay.classList.contains("active")
+          celebrationOverlay.classList.contains(
+            "active"
+          )
         ) {
 
           closeCelebration();
@@ -2708,29 +3061,23 @@
 
     function closeCelebration() {
 
-      /*
-        REMOVE ACTIVE CLASS
-        SO OVERLAY DISAPPEARS
-      */
-
       celebrationOverlay.classList.remove(
         "active"
       );
 
-
-      /*
-        CLEAN UP FALLING EMOJIS
-      */
-
       document
-        .querySelectorAll(".rain-item")
-        .forEach(item => item.remove());
+        .querySelectorAll(
+          ".rain-item"
+        )
+        .forEach(
+          item => item.remove()
+        );
 
     }
 
 
     /* =====================================================
-       SWEETS + RAKHI + EMOJI RAIN
+       CELEBRATION RAIN
     ===================================================== */
 
     function startCelebrationRain() {
@@ -2754,19 +3101,14 @@
       ];
 
 
-      /*
-        Prevent duplicate rain if celebration
-        is opened repeatedly.
-      */
-
       document
-        .querySelectorAll(".rain-item")
-        .forEach(item => item.remove());
+        .querySelectorAll(
+          ".rain-item"
+        )
+        .forEach(
+          item => item.remove()
+        );
 
-
-      /*
-        Create falling objects
-      */
 
       for (
         let i = 0;
@@ -2775,7 +3117,9 @@
       ) {
 
         const item =
-          document.createElement("div");
+          document.createElement(
+            "div"
+          );
 
 
         item.className =
@@ -2791,19 +3135,11 @@
           ];
 
 
-        /*
-          Random horizontal position
-        */
-
         item.style.left =
           Math.random() *
           100 +
           "vw";
 
-
-        /*
-          Random size
-        */
 
         item.style.fontSize =
           18 +
@@ -2811,19 +3147,11 @@
           "px";
 
 
-        /*
-          Random fall duration
-        */
-
         item.style.animationDuration =
           3 +
           Math.random() * 5 +
           "s";
 
-
-        /*
-          Random delay
-        */
 
         item.style.animationDelay =
           Math.random() * 2 +
@@ -2834,10 +3162,6 @@
           item
         );
 
-
-        /*
-          Remove after animation
-        */
 
         setTimeout(
           () => {
@@ -2899,14 +3223,18 @@
 
       const yourName =
         document
-          .getElementById("yourName")
+          .getElementById(
+            "yourName"
+          )
           .value
           .trim();
 
 
       const crushName =
         document
-          .getElementById("crushName")
+          .getElementById(
+            "crushName"
+          )
           .value
           .trim();
 
@@ -3043,18 +3371,23 @@
       result.animate(
         [
           {
-            transform: "scale(.9)",
+            transform:
+              "scale(.9)",
+
             opacity: 0
           },
 
           {
-            transform: "scale(1)",
+            transform:
+              "scale(1)",
+
             opacity: 1
           }
 
         ],
         {
           duration: 350,
+
           easing: "ease-out"
         }
       );
@@ -3070,7 +3403,9 @@
 
       const name =
         document
-          .getElementById("survivorName")
+          .getElementById(
+            "survivorName"
+          )
           .value
           .trim();
 
@@ -3100,6 +3435,7 @@
       result.innerHTML = `
 
         🎉
+
         <strong>
           CONGRATULATIONS
           ${name.toUpperCase()}!
@@ -3112,6 +3448,7 @@
         <br>
 
         🛡️
+
         <strong>
           DASHMEDIA RAKSHA BANDHAN SURVIVOR
         </strong>
@@ -3124,6 +3461,7 @@
         <br><br>
 
         Protection from unnecessary meetings:
+
         <strong>
           Valid for approximately 24 hours.
         </strong>
@@ -3162,7 +3500,9 @@
       ) {
 
         const item =
-          document.createElement("div");
+          document.createElement(
+            "div"
+          );
 
 
         item.classList.add(
