@@ -1,0 +1,3368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>DashMedia Raksha Bandhan 🎀</title>
+
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+
+    :root {
+      --orange: #ff6b00;
+      --yellow: #ffb800;
+      --pink: #ff3d71;
+      --purple: #7c3aed;
+      --dark: #101828;
+      --light: #fffaf5;
+      --white: #ffffff;
+      --green: #22c55e;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      overflow-x: hidden;
+    }
+
+    /* =========================
+       BREAKING NEWS
+    ========================= */
+
+    .breaking-news {
+      height: 45px;
+      background: #111827;
+      color: white;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      white-space: nowrap;
+      position: relative;
+      z-index: 3000;
+    }
+
+    .breaking-label {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      padding: 0 25px;
+      background: var(--pink);
+      font-size: 0.8rem;
+      font-weight: 900;
+      position: relative;
+      z-index: 2;
+      flex-shrink: 0;
+    }
+
+    .ticker-wrapper {
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .ticker {
+      display: inline-block;
+      padding-left: 100%;
+      animation: tickerMove 30s linear infinite;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    @keyframes tickerMove {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-100%);
+      }
+    }
+
+    /* =========================
+       TOP CELEBRATE BUTTON
+    ========================= */
+
+    .celebrate-top-btn {
+      position: fixed;
+
+      /* FIX:
+         Keep the button below the sticky navbar
+         so it never covers the navbar buttons.
+      */
+      top: 130px;
+
+      right: 25px;
+
+      z-index: 5000;
+
+      border: none;
+      outline: none;
+
+      padding: 13px 22px;
+      border-radius: 50px;
+
+      background: linear-gradient(
+        135deg,
+        #ff3d71,
+        #ff6b00
+      );
+
+      color: white;
+
+      font-family: "Inter", sans-serif;
+      font-size: 0.85rem;
+      font-weight: 900;
+
+      cursor: pointer;
+
+      box-shadow:
+        0 12px 30px rgba(255, 61, 113, 0.35);
+
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+    .celebrate-top-btn:hover {
+      transform: translateY(-3px) scale(1.04);
+
+      box-shadow:
+        0 18px 40px rgba(255, 61, 113, 0.45);
+    }
+
+    .celebrate-top-btn:active {
+      transform: scale(0.96);
+    }
+
+    /* Mobile */
+
+    @media (max-width: 750px) {
+      .celebrate-top-btn {
+        top: 125px;
+        right: 12px;
+
+        padding: 10px 16px;
+
+        font-size: 0.72rem;
+      }
+    }
+
+    /* =========================
+       NAVBAR
+    ========================= */
+
+    nav {
+      height: 75px;
+      width: 100%;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 0 8%;
+
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(15px);
+
+      border-bottom: 1px solid #eeeeee;
+
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+
+    .logo span {
+      color: var(--orange);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--dark);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .nav-button {
+      background: var(--dark);
+      color: white !important;
+      padding: 11px 20px;
+      border-radius: 50px;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: calc(100vh - 120px);
+
+      padding: 70px 8%;
+
+      display: flex;
+      align-items: center;
+      gap: 60px;
+
+      position: relative;
+      overflow: hidden;
+
+      background:
+        radial-gradient(
+          circle at 80% 20%,
+          rgba(255, 184, 0, 0.22),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 10% 80%,
+          rgba(255, 61, 113, 0.12),
+          transparent 30%
+        ),
+        var(--light);
+    }
+
+    .hero-content {
+      flex: 1;
+      max-width: 650px;
+      position: relative;
+      z-index: 5;
+    }
+
+    .tag {
+      display: inline-block;
+
+      padding: 10px 18px;
+
+      background: #fff0e5;
+      color: var(--orange);
+
+      border-radius: 50px;
+
+      font-size: 0.8rem;
+      font-weight: 900;
+
+      letter-spacing: 0.5px;
+
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(3.5rem, 6vw, 6.5rem);
+      line-height: 0.95;
+      letter-spacing: -5px;
+      font-weight: 900;
+      margin-bottom: 25px;
+    }
+
+    .highlight {
+      color: var(--orange);
+    }
+
+    .hero p {
+      color: #5f6875;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      max-width: 600px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .btn {
+      border: none;
+
+      padding: 16px 25px;
+
+      border-radius: 50px;
+
+      font-family: inherit;
+      font-weight: 800;
+
+      cursor: pointer;
+
+      transition: 0.3s;
+
+      text-decoration: none;
+
+      font-size: 0.95rem;
+    }
+
+    .btn:hover {
+      transform: translateY(-4px) scale(1.02);
+    }
+
+    .btn-primary {
+      background: var(--orange);
+      color: white;
+
+      box-shadow:
+        0 15px 30px rgba(255, 107, 0, 0.25);
+    }
+
+    .btn-dark {
+      background: var(--dark);
+      color: white;
+    }
+
+    /* =========================
+       CHASE SCENE
+    ========================= */
+
+    .hero-visual {
+      flex: 1;
+      min-width: 500px;
+
+      display: flex;
+      justify-content: center;
+    }
+
+    .chase-scene {
+      width: 560px;
+      max-width: 100%;
+      height: 470px;
+
+      position: relative;
+      overflow: hidden;
+
+      border-radius: 35px;
+
+      background:
+        linear-gradient(
+          180deg,
+          #dff4ff 0%,
+          #fff3e4 65%,
+          #ffd8a8 100%
+        );
+
+      border: 4px solid white;
+
+      box-shadow:
+        0 30px 70px rgba(0, 0, 0, 0.12);
+    }
+
+    .sun {
+      position: absolute;
+
+      width: 80px;
+      height: 80px;
+
+      background: var(--yellow);
+
+      border-radius: 50%;
+
+      top: 45px;
+      right: 55px;
+
+      box-shadow:
+        0 0 60px rgba(255, 184, 0, 0.5);
+    }
+
+    .cloud {
+      position: absolute;
+
+      font-size: 45px;
+
+      opacity: 0.8;
+
+      animation:
+        cloudMove 15s linear infinite;
+    }
+
+    .cloud-1 {
+      top: 50px;
+      left: 40px;
+    }
+
+    .cloud-2 {
+      top: 120px;
+      left: 350px;
+
+      animation-delay: -5s;
+    }
+
+    @keyframes cloudMove {
+      from {
+        transform: translateX(-100px);
+      }
+
+      to {
+        transform: translateX(600px);
+      }
+    }
+
+    .danger-alert {
+      position: absolute;
+
+      top: 25px;
+      left: 50%;
+
+      transform: translateX(-50%);
+
+      background: var(--dark);
+      color: white;
+
+      padding: 12px 20px;
+
+      border-radius: 50px;
+
+      font-size: 0.75rem;
+      font-weight: 900;
+
+      z-index: 20;
+
+      white-space: nowrap;
+
+      animation: alertShake 1s infinite;
+    }
+
+    @keyframes alertShake {
+      0%,
+      100% {
+        transform:
+          translateX(-50%)
+          rotate(0);
+      }
+
+      25% {
+        transform:
+          translateX(-50%)
+          rotate(-3deg);
+      }
+
+      75% {
+        transform:
+          translateX(-50%)
+          rotate(3deg);
+      }
+    }
+
+    /* ROAD */
+
+    .road {
+      position: absolute;
+
+      bottom: 105px;
+      left: 0;
+
+      width: 100%;
+      height: 12px;
+
+      background:
+        repeating-linear-gradient(
+          90deg,
+          var(--orange) 0 40px,
+          transparent 40px 70px
+        );
+
+      animation:
+        roadMove 0.7s linear infinite;
+    }
+
+    @keyframes roadMove {
+      from {
+        background-position: 0;
+      }
+
+      to {
+        background-position: -70px;
+      }
+    }
+
+    /* =========================
+       BOY
+    ========================= */
+
+    .runner-boy {
+      position: absolute;
+
+      bottom: 125px;
+      left: -150px;
+
+      z-index: 10;
+
+      animation:
+        boyRunning 7s linear infinite,
+        bodyBounce 0.25s ease-in-out infinite alternate;
+    }
+
+    .boy-emoji {
+      font-size: 95px;
+      display: block;
+
+      transform: scaleX(-1);
+    }
+
+    .runner-name {
+      margin-top: 5px;
+
+      background: white;
+
+      padding: 7px 15px;
+
+      border-radius: 50px;
+
+      font-size: 0.75rem;
+      font-weight: 900;
+
+      text-align: center;
+
+      box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    @keyframes boyRunning {
+      0% {
+        left: -150px;
+      }
+
+      45% {
+        left: 300px;
+      }
+
+      55% {
+        left: 320px;
+      }
+
+      72% {
+        left: 620px;
+      }
+
+      100% {
+        left: 620px;
+      }
+    }
+
+    @keyframes bodyBounce {
+      from {
+        transform:
+          translateY(0)
+          rotate(-2deg);
+      }
+
+      to {
+        transform:
+          translateY(-8px)
+          rotate(2deg);
+      }
+    }
+
+    /* =========================
+       CRUSH
+    ========================= */
+
+    .runner-crush {
+      position: absolute;
+
+      bottom: 125px;
+      left: -240px;
+
+      z-index: 9;
+
+      animation:
+        crushRunning 7s linear infinite,
+        bodyBounce 0.3s ease-in-out infinite alternate;
+    }
+
+    .crush-emoji {
+      font-size: 95px;
+      display: block;
+
+      transform: scaleX(-1);
+    }
+
+    .rakhi {
+      position: absolute;
+
+      font-size: 50px;
+
+      top: 5px;
+      right: -20px;
+
+      animation:
+        rakhiWave 0.4s ease-in-out infinite alternate;
+    }
+
+    .crush-name {
+      margin-top: 5px;
+
+      background: var(--pink);
+      color: white;
+
+      padding: 7px 15px;
+
+      border-radius: 50px;
+
+      font-size: 0.75rem;
+      font-weight: 900;
+
+      text-align: center;
+
+      box-shadow:
+        0 8px 20px rgba(255, 61, 113, 0.25);
+    }
+
+    @keyframes crushRunning {
+      0% {
+        left: -240px;
+      }
+
+      50% {
+        left: 250px;
+      }
+
+      65% {
+        left: 280px;
+      }
+
+      75% {
+        left: 620px;
+      }
+
+      100% {
+        left: 620px;
+      }
+    }
+
+    @keyframes rakhiWave {
+      from {
+        transform: rotate(-15deg);
+      }
+
+      to {
+        transform:
+          rotate(25deg)
+          translateY(-8px);
+      }
+    }
+
+    /* =========================
+       SPEED LINES
+    ========================= */
+
+    .speed-line {
+      position: absolute;
+
+      height: 5px;
+
+      border-radius: 20px;
+
+      background:
+        rgba(255, 107, 0, 0.4);
+
+      animation:
+        speedMove 0.5s linear infinite;
+    }
+
+    .speed-1 {
+      width: 80px;
+      top: 260px;
+      left: 20px;
+    }
+
+    .speed-2 {
+      width: 50px;
+      top: 300px;
+      left: 100px;
+
+      animation-delay: -0.2s;
+    }
+
+    .speed-3 {
+      width: 100px;
+      top: 350px;
+      left: 10px;
+
+      animation-delay: -0.4s;
+    }
+
+    @keyframes speedMove {
+      from {
+        transform: translateX(0);
+        opacity: 0;
+      }
+
+      50% {
+        opacity: 1;
+      }
+
+      to {
+        transform: translateX(300px);
+        opacity: 0;
+      }
+    }
+
+    /* =========================
+       SPEECH
+    ========================= */
+
+    .speech {
+      position: absolute;
+
+      padding: 13px 17px;
+
+      background: white;
+
+      border-radius: 18px;
+
+      font-size: 0.75rem;
+      font-weight: 900;
+
+      box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.1);
+
+      z-index: 15;
+    }
+
+    .crush-speech {
+      top: 180px;
+      left: 35px;
+
+      color: var(--pink);
+
+      animation:
+        speechFloat 2s ease-in-out infinite;
+    }
+
+    .boy-speech {
+      top: 240px;
+      right: 35px;
+
+      color: var(--orange);
+
+      animation:
+        speechFloat 2s ease-in-out infinite reverse;
+    }
+
+    @keyframes speechFloat {
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    /* =========================
+       GAME OVER
+    ========================= */
+
+    .game-over {
+      position: absolute;
+
+      top: 48%;
+      left: 50%;
+
+      transform:
+        translate(-50%, -50%)
+        scale(0);
+
+      background: var(--dark);
+      color: white;
+
+      padding: 20px 30px;
+
+      border-radius: 20px;
+
+      text-align: center;
+
+      z-index: 50;
+
+      font-weight: 900;
+      font-size: 1.2rem;
+
+      animation:
+        gameOver 7s linear infinite;
+    }
+
+    .game-over span {
+      display: block;
+
+      font-size: 0.75rem;
+
+      color: var(--yellow);
+
+      margin-top: 7px;
+    }
+
+    @keyframes gameOver {
+      0%,
+      60% {
+        transform:
+          translate(-50%, -50%)
+          scale(0);
+
+        opacity: 0;
+      }
+
+      68%,
+      78% {
+        transform:
+          translate(-50%, -50%)
+          scale(1);
+
+        opacity: 1;
+      }
+
+      85%,
+      100% {
+        transform:
+          translate(-50%, -50%)
+          scale(0);
+
+        opacity: 0;
+      }
+    }
+
+    /* =========================
+       DANGER METER
+    ========================= */
+
+    .danger-meter {
+      position: absolute;
+
+      bottom: 20px;
+      left: 25px;
+      right: 25px;
+
+      background: white;
+
+      padding: 14px 18px;
+
+      border-radius: 18px;
+
+      z-index: 30;
+
+      box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .meter-text {
+      display: flex;
+
+      justify-content: space-between;
+
+      font-size: 0.75rem;
+      font-weight: 900;
+
+      margin-bottom: 9px;
+    }
+
+    #dangerLevel {
+      color: var(--pink);
+    }
+
+    .meter {
+      height: 9px;
+
+      background: #eeeeee;
+
+      border-radius: 20px;
+
+      overflow: hidden;
+    }
+
+    .meter span {
+      display: block;
+
+      height: 100%;
+      width: 95%;
+
+      border-radius: 20px;
+
+      background:
+        linear-gradient(
+          90deg,
+          var(--yellow),
+          var(--orange),
+          var(--pink)
+        );
+
+      animation:
+        dangerPulse 1s ease-in-out infinite alternate;
+    }
+
+    @keyframes dangerPulse {
+      from {
+        width: 80%;
+      }
+
+      to {
+        width: 99%;
+      }
+    }
+
+    /* =========================
+       GENERAL
+    ========================= */
+
+    section {
+      position: relative;
+    }
+
+    .section-header {
+      text-align: center;
+
+      max-width: 800px;
+
+      margin:
+        0 auto 55px;
+    }
+
+    .small-title {
+      color: var(--orange);
+
+      font-weight: 900;
+
+      font-size: 0.75rem;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+    }
+
+    .section-header h2 {
+      font-size:
+        clamp(2.5rem, 5vw, 4.5rem);
+
+      letter-spacing: -3px;
+
+      margin: 12px 0;
+    }
+
+    .section-header p {
+      color: #68707c;
+
+      line-height: 1.7;
+    }
+
+    /* =========================
+       STATS
+    ========================= */
+
+    .stats {
+      padding: 100px 8%;
+
+      background: white;
+    }
+
+    .stats-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 20px;
+    }
+
+    .stat-card {
+      padding: 35px 20px;
+
+      background: var(--light);
+
+      border-radius: 25px;
+
+      text-align: center;
+
+      transition: 0.3s;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-10px);
+
+      background: var(--dark);
+
+      color: white;
+    }
+
+    .stat-number {
+      font-size: 3.5rem;
+
+      font-weight: 900;
+
+      color: var(--orange);
+    }
+
+    .stat-card p {
+      margin-top: 12px;
+
+      font-size: 0.85rem;
+
+      line-height: 1.6;
+    }
+
+    /* =========================
+       DEPARTMENTS
+    ========================= */
+
+    .departments {
+      padding: 110px 8%;
+
+      background: #f5f6f8;
+    }
+
+    .department-grid {
+      max-width: 1200px;
+
+      margin: auto;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 25px;
+    }
+
+    .department-card {
+      background: white;
+
+      padding: 40px;
+
+      border-radius: 30px;
+
+      border: 1px solid #eeeeee;
+
+      transition: 0.3s;
+    }
+
+    .department-card:hover {
+      transform: translateY(-10px);
+
+      box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.08);
+    }
+
+    .department-icon {
+      font-size: 50px;
+
+      margin-bottom: 20px;
+    }
+
+    .department-card h3 {
+      font-size: 1.8rem;
+
+      margin-bottom: 15px;
+    }
+
+    .department-card p {
+      color: #68707c;
+
+      line-height: 1.8;
+    }
+
+    .quote {
+      margin-top: 20px;
+
+      padding: 15px;
+
+      background: #fff4eb;
+
+      border-radius: 15px;
+
+      color: var(--orange);
+
+      font-weight: 800;
+
+      font-size: 0.85rem;
+    }
+
+    /* =========================
+       CALCULATOR
+    ========================= */
+
+    .crush-section {
+      padding: 110px 8%;
+
+      background:
+        radial-gradient(
+          circle at top left,
+          rgba(255, 61, 113, 0.18),
+          transparent 30%
+        ),
+        #fff5f7;
+    }
+
+    .crush-container {
+      max-width: 850px;
+
+      margin: auto;
+
+      padding: 55px;
+
+      text-align: center;
+
+      background: white;
+
+      border-radius: 40px;
+
+      box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.1);
+    }
+
+    .crush-container h2 {
+      font-size:
+        clamp(2.5rem, 5vw, 4rem);
+
+      letter-spacing: -3px;
+
+      margin: 15px 0;
+    }
+
+    .crush-container p {
+      color: #68707c;
+
+      line-height: 1.7;
+    }
+
+    .calculator-grid {
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 15px;
+
+      margin-top: 30px;
+    }
+
+    input,
+    select {
+      width: 100%;
+
+      padding: 17px;
+
+      border: 2px solid #eeeeee;
+
+      border-radius: 15px;
+
+      outline: none;
+
+      font-family: inherit;
+
+      font-size: 0.95rem;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: var(--pink);
+    }
+
+    .crush-btn {
+      margin-top: 20px;
+
+      background: var(--pink);
+
+      color: white;
+    }
+
+    .result {
+      display: none;
+
+      margin-top: 30px;
+
+      padding: 25px;
+
+      background: #f7f7f8;
+
+      border-radius: 20px;
+
+      line-height: 1.8;
+    }
+
+    /* =========================
+       SEO
+    ========================= */
+
+    .seo-section {
+      padding: 110px 8%;
+
+      background: var(--dark);
+
+      color: white;
+    }
+
+    .seo-container {
+      max-width: 1100px;
+
+      margin: auto;
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 70px;
+
+      align-items: center;
+    }
+
+    .seo-text h2 {
+      font-size:
+        clamp(3rem, 5vw, 5rem);
+
+      line-height: 1;
+
+      letter-spacing: -4px;
+
+      margin: 20px 0;
+    }
+
+    .seo-text p {
+      color: #aab2bf;
+
+      line-height: 1.8;
+    }
+
+    .ranking-card {
+      padding: 35px;
+
+      background: white;
+
+      color: var(--dark);
+
+      border-radius: 30px;
+    }
+
+    .ranking-title {
+      display: flex;
+
+      justify-content: space-between;
+
+      margin-bottom: 30px;
+
+      font-weight: 900;
+    }
+
+    .rank-item {
+      margin-bottom: 22px;
+    }
+
+    .rank-info {
+      display: flex;
+
+      justify-content: space-between;
+
+      margin-bottom: 8px;
+
+      font-size: 0.85rem;
+
+      font-weight: 800;
+    }
+
+    .bar {
+      height: 11px;
+
+      background: #eeeeee;
+
+      border-radius: 20px;
+
+      overflow: hidden;
+    }
+
+    .bar span {
+      display: block;
+
+      width: 0;
+
+      height: 100%;
+
+      border-radius: 20px;
+
+      background: var(--orange);
+
+      transition: width 2s ease;
+    }
+
+    /* =========================
+       SURVIVOR
+    ========================= */
+
+    .survivor {
+      padding: 110px 8%;
+
+      text-align: center;
+    }
+
+    .survivor-card {
+      max-width: 650px;
+
+      margin: 40px auto;
+
+      padding: 45px;
+
+      background: var(--dark);
+
+      border-radius: 35px;
+    }
+
+    .survivor-card input,
+    .survivor-card select {
+      border: none;
+
+      margin-bottom: 15px;
+    }
+
+    .survivor-card button {
+      width: 100%;
+
+      background: var(--yellow);
+
+      color: var(--dark);
+    }
+
+    #survivorResult {
+      margin-top: 25px;
+
+      color: white;
+
+      line-height: 1.8;
+    }
+
+    /* =========================
+       CELEBRATION OVERLAY
+    ========================= */
+
+    .celebration-overlay {
+      position: fixed;
+
+      inset: 0;
+
+      z-index: 10000;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      padding: 20px;
+
+      background:
+        radial-gradient(
+          circle at 50% 30%,
+          rgba(255, 184, 0, 0.35),
+          transparent 30%
+        ),
+        linear-gradient(
+          135deg,
+          rgba(124, 58, 237, 0.96),
+          rgba(255, 61, 113, 0.96)
+        );
+
+      opacity: 0;
+
+      visibility: hidden;
+
+      pointer-events: none;
+
+      transition:
+        opacity 0.4s ease,
+        visibility 0.4s ease;
+    }
+
+    .celebration-overlay.active {
+      opacity: 1;
+
+      visibility: visible;
+
+      pointer-events: auto;
+    }
+
+    .celebration-card {
+      position: relative;
+
+      width: min(700px, 95vw);
+
+      padding: 55px 35px;
+
+      text-align: center;
+
+      background: rgba(255, 255, 255, 0.97);
+
+      border-radius: 40px;
+
+      box-shadow:
+        0 40px 100px rgba(0, 0, 0, 0.3);
+
+      animation:
+        celebrationPop 0.6s
+        cubic-bezier(.17,.67,.3,1.3);
+    }
+
+    @keyframes celebrationPop {
+      from {
+        transform:
+          scale(0.6)
+          rotate(-5deg);
+
+        opacity: 0;
+      }
+
+      to {
+        transform:
+          scale(1)
+          rotate(0);
+
+        opacity: 1;
+      }
+    }
+
+    .celebration-emoji {
+      font-size: 80px;
+
+      margin-bottom: 15px;
+
+      animation:
+        celebrationBounce
+        1s ease-in-out infinite alternate;
+    }
+
+    @keyframes celebrationBounce {
+      from {
+        transform: translateY(0);
+      }
+
+      to {
+        transform: translateY(-12px);
+      }
+    }
+
+    .celebration-card h2 {
+      font-size:
+        clamp(2rem, 6vw, 4.5rem);
+
+      line-height: 1;
+
+      letter-spacing: -3px;
+
+      color: var(--pink);
+
+      margin-bottom: 20px;
+    }
+
+    .celebration-card h3 {
+      font-size: 1.3rem;
+
+      margin-bottom: 15px;
+    }
+
+    .celebration-card p {
+      color: #68707c;
+
+      line-height: 1.8;
+
+      max-width: 570px;
+
+      margin: auto;
+    }
+
+    .dashmedia-message {
+      margin-top: 25px;
+
+      padding: 18px;
+
+      background: #fff4eb;
+
+      color: var(--orange);
+
+      border-radius: 20px;
+
+      font-weight: 900;
+
+      line-height: 1.6;
+    }
+
+    .celebration-buttons {
+      display: flex;
+
+      justify-content: center;
+
+      gap: 12px;
+
+      flex-wrap: wrap;
+
+      margin-top: 30px;
+    }
+
+    .close-celebration {
+      background: var(--dark);
+
+      color: white;
+    }
+
+    .continue-btn {
+      background: var(--pink);
+
+      color: white;
+    }
+
+    /* =========================
+       FALLING CELEBRATION ITEMS
+    ========================= */
+
+    .rain-item {
+      position: fixed;
+
+      top: -100px;
+
+      z-index: 10001;
+
+      pointer-events: none;
+
+      user-select: none;
+
+      animation:
+        celebrationRain
+        linear forwards;
+    }
+
+    @keyframes celebrationRain {
+      0% {
+        transform:
+          translateY(-100px)
+          rotate(0deg);
+
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 1;
+      }
+
+      100% {
+        transform:
+          translateY(110vh)
+          rotate(720deg);
+
+        opacity: 0;
+      }
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      padding: 55px 8%;
+
+      background: #080c14;
+
+      color: white;
+
+      text-align: center;
+    }
+
+    footer h2 {
+      font-size: 2rem;
+    }
+
+    footer h2 span {
+      color: var(--orange);
+    }
+
+    footer p {
+      margin-top: 15px;
+
+      color: #8d96a3;
+
+      line-height: 1.7;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 1000px) {
+      .hero {
+        flex-direction: column;
+
+        text-align: center;
+      }
+
+      .hero-content {
+        max-width: 800px;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .hero-visual {
+        min-width: 100%;
+      }
+
+      .seo-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 750px) {
+      .celebrate-top-btn {
+        /* FIX:
+           Still below the navbar on mobile.
+        */
+        top: 125px;
+        right: 10px;
+
+        padding: 10px 15px;
+
+        font-size: 0.7rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      nav {
+        padding: 0 6%;
+      }
+
+      .hero {
+        padding: 60px 6%;
+      }
+
+      .hero h1 {
+        letter-spacing: -3px;
+      }
+
+      .stats,
+      .departments,
+      .crush-section,
+      .seo-section,
+      .survivor {
+        padding-left: 6%;
+        padding-right: 6%;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .department-grid,
+      .calculator-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .crush-container {
+        padding: 35px 20px;
+      }
+
+      .chase-scene {
+        height: 430px;
+      }
+
+      .boy-emoji,
+      .crush-emoji {
+        font-size: 75px;
+      }
+
+      .breaking-label {
+        padding: 0 12px;
+
+        font-size: 0.65rem;
+      }
+
+      .celebration-card {
+        padding: 40px 20px;
+      }
+
+      .celebration-emoji {
+        font-size: 60px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .chase-scene {
+        border-radius: 25px;
+      }
+
+      .speech {
+        display: none;
+      }
+
+      .danger-alert {
+        font-size: 0.65rem;
+      }
+
+      .celebrate-top-btn {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       BREAKING NEWS
+  ========================= -->
+
+  <div class="breaking-news">
+
+    <div class="breaking-label">
+      🚨 BREAKING NEWS
+    </div>
+
+    <div class="ticker-wrapper">
+      <div class="ticker">
+        🚨 DashMedia Alert:
+        Boys are advised to maintain a minimum 5-meter distance from their office crush today.
+        🎀 Reason: She might be carrying a Rakhi.
+        💀 Developers are pretending the server is down.
+        📈 SEO team says rankings are more important than relationships.
+        🏃 Several employees have already requested Work From Home.
+        🚨 HR has officially declared "Rakhi Emergency Mode".
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       TOP CELEBRATION BUTTON
+  ========================= -->
+
+  <button
+    type="button"
+    class="celebrate-top-btn"
+    id="celebrateBtn"
+  >
+    🎀 Celebrate Raksha Bandhan
+  </button>
+
+
+  <!-- =========================
+       NAVBAR
+  ========================= -->
+
+  <nav>
+
+    <div class="logo">
+      Dash<span>Media</span> 🎀
+    </div>
+
+    <ul class="nav-links">
+
+      <li>
+        <a href="#departments">
+          Departments
+        </a>
+      </li>
+
+      <li>
+        <a href="#crush">
+          Rakhi Risk 😂
+        </a>
+      </li>
+
+      <li>
+        <a href="#seo">
+          SEO Reality
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="#survivor"
+          class="nav-button"
+        >
+          Survive Rakhi 🫡
+        </a>
+      </li>
+
+    </ul>
+
+  </nav>
+
+
+  <!-- =========================
+       HERO
+  ========================= -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="tag">
+        🎀 DASHMEDIA RAKSHA BANDHAN 2026
+      </div>
+
+      <h1>
+        Run For Your Life...
+        <span class="highlight">
+          She's Holding A Rakhi. 💀
+        </span>
+      </h1>
+
+      <p>
+        At DashMedia, we survive Google updates,
+        broken websites, demanding clients,
+        impossible deadlines and Monday meetings.
+
+        <br><br>
+
+        But today there is a bigger emergency...
+
+        <strong>
+          Your office crush is running after you with a Rakhi. 🎀🏃
+        </strong>
+      </p>
+
+      <div class="hero-buttons">
+
+        <a
+          href="#crush"
+          class="btn btn-primary"
+        >
+          🚨 Check My Danger Level
+        </a>
+
+        <a
+          href="#departments"
+          class="btn btn-dark"
+        >
+          Meet The Survivors 😂
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         RUNNING SCENE
+    ========================= -->
+
+    <div class="hero-visual">
+
+      <div class="chase-scene">
+
+        <div class="sun"></div>
+
+        <div class="cloud cloud-1">
+          ☁️
+        </div>
+
+        <div class="cloud cloud-2">
+          ☁️
+        </div>
+
+        <div class="danger-alert">
+          🚨 RAKHI DETECTED!
+        </div>
+
+
+        <div class="speed-line speed-1"></div>
+        <div class="speed-line speed-2"></div>
+        <div class="speed-line speed-3"></div>
+
+
+        <!-- BOY -->
+
+        <div class="runner-boy">
+
+          <div class="boy-emoji">
+            🏃‍♂️
+          </div>
+
+          <div class="runner-name">
+            YOU 😭
+          </div>
+
+        </div>
+
+
+        <!-- CRUSH -->
+
+        <div class="runner-crush">
+
+          <div class="rakhi">
+            🎀
+          </div>
+
+          <div class="crush-emoji">
+            🏃‍♀️
+          </div>
+
+          <div class="crush-name">
+            YOUR CRUSH 😈
+          </div>
+
+        </div>
+
+
+        <div class="speech crush-speech">
+          BROOO! WAIT! 🎀😈
+        </div>
+
+        <div class="speech boy-speech">
+          NOT TODAY! 😭🏃
+        </div>
+
+
+        <div class="game-over">
+
+          💀 BRO-ZONED!
+
+          <span>
+            Escape Failed Successfully 🎀
+          </span>
+
+        </div>
+
+
+        <div class="road"></div>
+
+
+        <div class="danger-meter">
+
+          <div class="meter-text">
+
+            <span>
+              Rakhi Danger Level
+            </span>
+
+            <strong id="dangerLevel">
+              99%
+            </strong>
+
+          </div>
+
+          <div class="meter">
+            <span></span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       STATS
+  ========================= -->
+
+  <section class="stats">
+
+    <div class="section-header">
+
+      <div class="small-title">
+        Highly Scientific Research™
+      </div>
+
+      <h2>
+        DashMedia Rakhi Analytics 📊
+      </h2>
+
+      <p>
+        Data collected from office conversations,
+        suspicious WhatsApp groups and people saying
+        "Bro, don't tell anyone."
+      </p>
+
+    </div>
+
+
+    <div class="stats-grid">
+
+      <div class="stat-card">
+
+        <div
+          class="stat-number"
+          data-target="98"
+        >
+          0
+        </div>
+
+        <p>
+          % Boys checking if their crush bought a Rakhi
+        </p>
+
+      </div>
+
+
+      <div class="stat-card">
+
+        <div
+          class="stat-number"
+          data-target="100"
+        >
+          0
+        </div>
+
+        <p>
+          % SEO executives blaming Google updates
+        </p>
+
+      </div>
+
+
+      <div class="stat-card">
+
+        <div
+          class="stat-number"
+          data-target="87"
+        >
+          0
+        </div>
+
+        <p>
+          % Developers saying "It works on my system"
+        </p>
+
+      </div>
+
+
+      <div class="stat-card">
+
+        <div
+          class="stat-number"
+          data-target="999"
+        >
+          0
+        </div>
+
+        <p>
+          "Can you do it before EOD?" messages survived
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       DEPARTMENTS
+  ========================= -->
+
+  <section
+    class="departments"
+    id="departments"
+  >
+
+    <div class="section-header">
+
+      <div class="small-title">
+        Meet The Real Heroes
+      </div>
+
+      <h2>
+        DashMedia Departments 😂
+      </h2>
+
+      <p>
+        Different departments.
+        Same trauma.
+        Different deadlines.
+      </p>
+
+    </div>
+
+
+    <div class="department-grid">
+
+      <div class="department-card">
+
+        <div class="department-icon">
+          🔍
+        </div>
+
+        <h3>
+          SEO Team
+        </h3>
+
+        <p>
+          We can rank your website on Google.
+
+          <br><br>
+
+          But unfortunately,
+          we still cannot rank #1
+          in our crush's priority list.
+        </p>
+
+        <div class="quote">
+          "Google page 1? Easy.
+          Her WhatsApp reply? Impossible." 💀
+        </div>
+
+      </div>
+
+
+      <div class="department-card">
+
+        <div class="department-icon">
+          💻
+        </div>
+
+        <h3>
+          Development Team
+        </h3>
+
+        <p>
+          Protectors of servers.
+          Destroyers of bugs.
+          Survivors of production deployments.
+
+          <br><br>
+
+          Current emergency:
+          "Bro... she is walking towards me with a Rakhi."
+        </p>
+
+        <div class="quote">
+          "404: Escape Route Not Found." 😂
+        </div>
+
+      </div>
+
+
+      <div class="department-card">
+
+        <div class="department-icon">
+          📢
+        </div>
+
+        <h3>
+          Digital Marketing
+        </h3>
+
+        <p>
+          We generate impressions.
+          We generate leads.
+          We generate conversions.
+
+          <br><br>
+
+          But when it comes to our crush,
+          the conversion rate is exactly 0%.
+        </p>
+
+        <div class="quote">
+          "Campaign successful.
+          Love campaign? Budget exceeded." 💸
+        </div>
+
+      </div>
+
+
+      <div class="department-card">
+
+        <div class="department-icon">
+          👀
+        </div>
+
+        <h3>
+          Office Bestie
+        </h3>
+
+        <p>
+          Knows who likes whom.
+          Knows who broke production.
+          Knows who secretly likes the person
+          holding the Rakhi.
+        </p>
+
+        <div class="quote">
+          "The real company database.
+          No encryption. All secrets exposed." 😂
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       CRUSH CALCULATOR
+  ========================= -->
+
+  <section
+    class="crush-section"
+    id="crush"
+  >
+
+    <div class="crush-container">
+
+      <div class="small-title">
+        ⚠ Extremely Accurate Technology*
+      </div>
+
+      <h2>
+        Will Your Crush Tie You Rakhi? 🎀💀
+      </h2>
+
+      <p>
+        Enter your details and let our
+        completely unscientific AI predict
+        your future.
+      </p>
+
+
+      <div class="calculator-grid">
+
+        <input
+          id="yourName"
+          type="text"
+          placeholder="Your name 😭"
+        />
+
+        <input
+          id="crushName"
+          type="text"
+          placeholder="Your crush's name 👀"
+        />
+
+      </div>
+
+
+      <button
+        type="button"
+        class="btn crush-btn"
+        onclick="calculateRakhiRisk()"
+      >
+        🚨 Calculate Rakhi Danger
+      </button>
+
+
+      <div
+        class="result"
+        id="crushResult"
+      ></div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       SEO SECTION
+  ========================= -->
+
+  <section
+    class="seo-section"
+    id="seo"
+  >
+
+    <div class="seo-container">
+
+      <div class="seo-text">
+
+        <div class="small-title">
+          DashMedia SEO Department
+        </div>
+
+        <h2>
+          We Protect Rankings.
+          Sometimes. 😂
+        </h2>
+
+        <p>
+          Every SEO executive has one dream:
+
+          <br>
+
+          Rank the website #1.
+
+          <br><br>
+
+          Every Google update has another dream:
+
+          <br>
+
+          Destroy that dream.
+
+          <br><br>
+
+          Happy Raksha Bandhan to everyone
+          checking Search Console every morning. 📈😂
+        </p>
+
+      </div>
+
+
+      <div class="ranking-card">
+
+        <div class="ranking-title">
+
+          <span>
+            📊 Keyword Rankings
+          </span>
+
+          <span style="color:#22c55e;">
+            ↑ Improving
+          </span>
+
+        </div>
+
+
+        <div class="rank-item">
+
+          <div class="rank-info">
+
+            <span>
+              DashMedia SEO Skills
+            </span>
+
+            <span>
+              #1
+            </span>
+
+          </div>
+
+          <div class="bar">
+            <span data-width="95%"></span>
+          </div>
+
+        </div>
+
+
+        <div class="rank-item">
+
+          <div class="rank-info">
+
+            <span>
+              Client Expectations
+            </span>
+
+            <span>
+              ∞
+            </span>
+
+          </div>
+
+          <div class="bar">
+            <span data-width="100%"></span>
+          </div>
+
+        </div>
+
+
+        <div class="rank-item">
+
+          <div class="rank-info">
+
+            <span>
+              Developer Patience
+            </span>
+
+            <span>
+              #404
+            </span>
+
+          </div>
+
+          <div class="bar">
+            <span data-width="20%"></span>
+          </div>
+
+        </div>
+
+
+        <div class="rank-item">
+
+          <div class="rank-info">
+
+            <span>
+              Crush Reply Rate
+            </span>
+
+            <span>
+              1%
+            </span>
+
+          </div>
+
+          <div class="bar">
+            <span data-width="5%"></span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       SURVIVOR
+  ========================= -->
+
+  <section
+    class="survivor"
+    id="survivor"
+  >
+
+    <div class="section-header">
+
+      <div class="small-title">
+        Official DashMedia Certificate
+      </div>
+
+      <h2>
+        Become A Rakhi Survivor 🫡
+      </h2>
+
+      <p>
+        Register before your crush finds you.
+      </p>
+
+    </div>
+
+
+    <div class="survivor-card">
+
+      <input
+        id="survivorName"
+        placeholder="Your name, brave soldier 🫡"
+      />
+
+
+      <select id="department">
+
+        <option>
+          SEO 🔍
+        </option>
+
+        <option>
+          Development 💻
+        </option>
+
+        <option>
+          Digital Marketing 📢
+        </option>
+
+        <option>
+          Design 🎨
+        </option>
+
+        <option>
+          Professional Meeting Survivor 📅
+        </option>
+
+      </select>
+
+
+      <button
+        type="button"
+        class="btn"
+        onclick="registerSurvivor()"
+      >
+        🎀 Claim Survivor Status
+      </button>
+
+
+      <div id="survivorResult"></div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+
+    <h2>
+      Dash<span>Media</span> 🎀
+    </h2>
+
+    <p>
+      Ranking websites. Building digital experiences.
+      Generating leads.
+      And occasionally running away from Rakhi.
+    </p>
+
+    <p>
+      Made with ❤️, ☕, Google Search Console
+      and absolutely no Friday deployments.
+    </p>
+
+  </footer>
+
+
+  <!-- =====================================================
+       RAKSHA BANDHAN CELEBRATION OVERLAY
+  ===================================================== -->
+
+  <div
+    class="celebration-overlay"
+    id="celebrationOverlay"
+  >
+
+    <div class="celebration-card">
+
+      <div class="celebration-emoji">
+        🎀🪔
+      </div>
+
+      <h2>
+        Happy Raksha Bandhan!
+      </h2>
+
+      <h3>
+        From Everyone at DashMedia ❤️
+      </h3>
+
+      <p>
+        Today, we're taking a break from
+        Google rankings, SEO reports,
+        development bugs, client revisions
+        and "just one small change". 😂
+
+        <br><br>
+
+        Wishing everyone a wonderful
+        Raksha Bandhan filled with happiness,
+        laughter, sweets and lots of love!
+      </p>
+
+
+      <div class="dashmedia-message">
+
+        🎀 Happy Raksha Bandhan to all our
+        amazing teammates, brothers, sisters
+        and their families!
+
+        <br>
+
+        May your bonds stay strong,
+        your smiles stay bright,
+        and your Google rankings stay #1. 📈❤️
+
+        <br><br>
+
+        — Team DashMedia 🚀
+
+      </div>
+
+
+      <div class="celebration-buttons">
+
+        <button
+          type="button"
+          class="btn close-celebration"
+          id="closeCelebrationBtn"
+        >
+          ❌ Close Celebration
+        </button>
+
+
+        <button
+          type="button"
+          class="btn continue-btn"
+          id="continueBtn"
+        >
+          🫡 Continue Surviving
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================= -->
+
+  <script>
+
+    /* =====================================================
+       CELEBRATION OVERLAY
+    ===================================================== */
+
+    const celebrationOverlay =
+      document.getElementById("celebrationOverlay");
+
+    const celebrateBtn =
+      document.getElementById("celebrateBtn");
+
+    const closeCelebrationBtn =
+      document.getElementById("closeCelebrationBtn");
+
+    const continueBtn =
+      document.getElementById("continueBtn");
+
+
+    /*
+      OPEN CELEBRATION
+    */
+
+    celebrateBtn.addEventListener(
+      "click",
+      openCelebration
+    );
+
+
+    /*
+      CLOSE BUTTON
+    */
+
+    closeCelebrationBtn.addEventListener(
+      "click",
+      closeCelebration
+    );
+
+
+    /*
+      CONTINUE SURVIVING BUTTON
+
+      Closes the celebration overlay.
+    */
+
+    continueBtn.addEventListener(
+      "click",
+      closeCelebration
+    );
+
+
+    /*
+      CLICK OUTSIDE CARD TO CLOSE
+    */
+
+    celebrationOverlay.addEventListener(
+      "click",
+      function (event) {
+
+        if (
+          event.target === celebrationOverlay
+        ) {
+          closeCelebration();
+        }
+
+      }
+    );
+
+
+    /*
+      ESC KEY ALSO CLOSES
+    */
+
+    document.addEventListener(
+      "keydown",
+      function (event) {
+
+        if (
+          event.key === "Escape" &&
+          celebrationOverlay.classList.contains("active")
+        ) {
+
+          closeCelebration();
+
+        }
+
+      }
+    );
+
+
+    function openCelebration() {
+
+      celebrationOverlay.classList.add(
+        "active"
+      );
+
+      startCelebrationRain();
+
+    }
+
+
+    function closeCelebration() {
+
+      /*
+        REMOVE ACTIVE CLASS
+        SO OVERLAY DISAPPEARS
+      */
+
+      celebrationOverlay.classList.remove(
+        "active"
+      );
+
+
+      /*
+        CLEAN UP FALLING EMOJIS
+      */
+
+      document
+        .querySelectorAll(".rain-item")
+        .forEach(item => item.remove());
+
+    }
+
+
+    /* =====================================================
+       SWEETS + RAKHI + EMOJI RAIN
+    ===================================================== */
+
+    function startCelebrationRain() {
+
+      const items = [
+        "🎀",
+        "🎁",
+        "🍬",
+        "🍭",
+        "🍫",
+        "🪔",
+        "❤️",
+        "💖",
+        "✨",
+        "🎉",
+        "🌸",
+        "🥳",
+        "😊",
+        "🧡",
+        "💛"
+      ];
+
+
+      /*
+        Prevent duplicate rain if celebration
+        is opened repeatedly.
+      */
+
+      document
+        .querySelectorAll(".rain-item")
+        .forEach(item => item.remove());
+
+
+      /*
+        Create falling objects
+      */
+
+      for (
+        let i = 0;
+        i < 100;
+        i++
+      ) {
+
+        const item =
+          document.createElement("div");
+
+
+        item.className =
+          "rain-item";
+
+
+        item.textContent =
+          items[
+            Math.floor(
+              Math.random() *
+              items.length
+            )
+          ];
+
+
+        /*
+          Random horizontal position
+        */
+
+        item.style.left =
+          Math.random() *
+          100 +
+          "vw";
+
+
+        /*
+          Random size
+        */
+
+        item.style.fontSize =
+          18 +
+          Math.random() * 35 +
+          "px";
+
+
+        /*
+          Random fall duration
+        */
+
+        item.style.animationDuration =
+          3 +
+          Math.random() * 5 +
+          "s";
+
+
+        /*
+          Random delay
+        */
+
+        item.style.animationDelay =
+          Math.random() * 2 +
+          "s";
+
+
+        document.body.appendChild(
+          item
+        );
+
+
+        /*
+          Remove after animation
+        */
+
+        setTimeout(
+          () => {
+            item.remove();
+          },
+          9000
+        );
+
+      }
+
+    }
+
+
+    /* =====================================================
+       DANGER LEVEL
+    ===================================================== */
+
+    const dangerLevels = [
+      "87%",
+      "91%",
+      "94%",
+      "97%",
+      "99%",
+      "100%"
+    ];
+
+
+    setInterval(
+      () => {
+
+        const danger =
+          document.getElementById(
+            "dangerLevel"
+          );
+
+
+        const randomLevel =
+          dangerLevels[
+            Math.floor(
+              Math.random() *
+              dangerLevels.length
+            )
+          ];
+
+
+        danger.textContent =
+          randomLevel;
+
+      },
+      1500
+    );
+
+
+    /* =====================================================
+       RAKHI RISK CALCULATOR
+    ===================================================== */
+
+    function calculateRakhiRisk() {
+
+      const yourName =
+        document
+          .getElementById("yourName")
+          .value
+          .trim();
+
+
+      const crushName =
+        document
+          .getElementById("crushName")
+          .value
+          .trim();
+
+
+      const result =
+        document.getElementById(
+          "crushResult"
+        );
+
+
+      result.style.display =
+        "block";
+
+
+      if (
+        !yourName ||
+        !crushName
+      ) {
+
+        result.innerHTML = `
+          🚨 <strong>DATA INCOMPLETE!</strong>
+          <br><br>
+          Even our AI cannot predict your
+          bro-zone probability without names. 😂
+        `;
+
+        return;
+
+      }
+
+
+      const results = [
+
+        `
+          🚨 <strong>HIGH RISK DETECTED!</strong>
+          <br><br>
+
+          ${crushName} has probably already
+          purchased a Rakhi.
+
+          <br><br>
+
+          Recommended action:
+          <strong>
+            Work From Home immediately. 🏃💨
+          </strong>
+        `,
+
+
+        `
+          ⚠️ <strong>MEDIUM RISK!</strong>
+          <br><br>
+
+          ${yourName}, avoid sitting near
+          ${crushName} today.
+
+          <br><br>
+
+          Do NOT say:
+          <strong>
+            "Happy Raksha Bandhan in advance."
+          </strong>
+
+          💀
+        `,
+
+
+        `
+          🟢 <strong>RELATIVELY SAFE!</strong>
+          <br><br>
+
+          Congratulations ${yourName}! 🎉
+
+          <br><br>
+
+          ${crushName} probably won't tie you Rakhi.
+
+          <br>
+
+          Friendship zone probability:
+          <strong>87%</strong> 😂
+        `,
+
+
+        `
+          ☠️ <strong>CRITICAL DANGER!</strong>
+          <br><br>
+
+          Someone already told
+          ${crushName}
+          that you have a crush on them.
+
+          <br><br>
+
+          Prepare for:
+
+          🎀 Rakhi
+
+          😂 Office teasing
+
+          📸 Group photos
+
+          💀 Emotional damage
+        `,
+
+
+        `
+          🤖 <strong>AI SYSTEM CRASHED!</strong>
+          <br><br>
+
+          Our system tried calculating
+          your chances with ${crushName}...
+
+          <br><br>
+
+          Error:
+          <strong>
+            Love.exe has stopped working.
+          </strong>
+        `
+
+      ];
+
+
+      result.innerHTML =
+        results[
+          Math.floor(
+            Math.random() *
+            results.length
+          )
+        ];
+
+
+      result.animate(
+        [
+          {
+            transform: "scale(.9)",
+            opacity: 0
+          },
+
+          {
+            transform: "scale(1)",
+            opacity: 1
+          }
+
+        ],
+        {
+          duration: 350,
+          easing: "ease-out"
+        }
+      );
+
+    }
+
+
+    /* =====================================================
+       SURVIVOR REGISTRATION
+    ===================================================== */
+
+    function registerSurvivor() {
+
+      const name =
+        document
+          .getElementById("survivorName")
+          .value
+          .trim();
+
+
+      const department =
+        document.getElementById(
+          "department"
+        ).value;
+
+
+      const result =
+        document.getElementById(
+          "survivorResult"
+        );
+
+
+      if (!name) {
+
+        result.innerHTML =
+          "🚨 Soldier identification required.";
+
+        return;
+
+      }
+
+
+      result.innerHTML = `
+
+        🎉
+        <strong>
+          CONGRATULATIONS
+          ${name.toUpperCase()}!
+        </strong>
+
+        <br><br>
+
+        You are officially certified as a
+
+        <br>
+
+        🛡️
+        <strong>
+          DASHMEDIA RAKSHA BANDHAN SURVIVOR
+        </strong>
+
+        <br><br>
+
+        Department:
+        ${department}
+
+        <br><br>
+
+        Protection from unnecessary meetings:
+        <strong>
+          Valid for approximately 24 hours.
+        </strong>
+
+        😂
+
+      `;
+
+
+      createConfetti();
+
+    }
+
+
+    /* =====================================================
+       CONFETTI
+    ===================================================== */
+
+    function createConfetti() {
+
+      const items = [
+        "🎀",
+        "🎉",
+        "✨",
+        "😂",
+        "📈",
+        "🔥",
+        "❤️"
+      ];
+
+
+      for (
+        let i = 0;
+        i < 70;
+        i++
+      ) {
+
+        const item =
+          document.createElement("div");
+
+
+        item.classList.add(
+          "rain-item"
+        );
+
+
+        item.innerText =
+          items[
+            Math.floor(
+              Math.random() *
+              items.length
+            )
+          ];
+
+
+        item.style.left =
+          Math.random() *
+          100 +
+          "vw";
+
+
+        item.style.fontSize =
+          Math.random() *
+          20 +
+          15 +
+          "px";
+
+
+        item.style.animationDuration =
+          Math.random() *
+          3 +
+          2 +
+          "s";
+
+
+        document.body.appendChild(
+          item
+        );
+
+
+        setTimeout(
+          () => {
+            item.remove();
+          },
+          5000
+        );
+
+      }
+
+    }
+
+
+    /* =====================================================
+       STAT COUNTER
+    ===================================================== */
+
+    const counters =
+      document.querySelectorAll(
+        ".stat-number"
+      );
+
+
+    const counterObserver =
+      new IntersectionObserver(
+        entries => {
+
+          entries.forEach(
+            entry => {
+
+              if (
+                !entry.isIntersecting
+              ) {
+                return;
+              }
+
+
+              const counter =
+                entry.target;
+
+
+              const target =
+                Number(
+                  counter.dataset.target
+                );
+
+
+              let current = 0;
+
+
+              const increment =
+                Math.ceil(
+                  target / 70
+                );
+
+
+              const interval =
+                setInterval(
+                  () => {
+
+                    current +=
+                      increment;
+
+
+                    if (
+                      current >=
+                      target
+                    ) {
+
+                      current =
+                        target;
+
+                      clearInterval(
+                        interval
+                      );
+
+                    }
+
+
+                    counter.textContent =
+                      current;
+
+                  },
+                  20
+                );
+
+
+              counterObserver.unobserve(
+                counter
+              );
+
+            }
+          );
+
+        }
+      );
+
+
+    counters.forEach(
+      counter => {
+
+        counterObserver.observe(
+          counter
+        );
+
+      }
+    );
+
+
+    /* =====================================================
+       SEO BAR ANIMATION
+    ===================================================== */
+
+    const seoSection =
+      document.querySelector(
+        ".seo-section"
+      );
+
+
+    const seoObserver =
+      new IntersectionObserver(
+        entries => {
+
+          entries.forEach(
+            entry => {
+
+              if (
+                entry.isIntersecting
+              ) {
+
+                document
+                  .querySelectorAll(
+                    ".bar span"
+                  )
+                  .forEach(
+                    bar => {
+
+                      bar.style.width =
+                        bar.dataset.width;
+
+                    }
+                  );
+
+              }
+
+            }
+          );
+
+        },
+        {
+          threshold: 0.3
+        }
+      );
+
+
+    seoObserver.observe(
+      seoSection
+    );
+
+  </script>
+
+</body>
+</html>
